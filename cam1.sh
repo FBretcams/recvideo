@@ -18,23 +18,23 @@ ip="10.7.206.15"
 grabacion=$cam_name"_"$hora_anterior;
 #echo $grabacion
 
-if [ -d "/home/ubuntu/bretcams/public/$cam_name/video_history/$fecha/" ]; then
+if [ -d "/home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/" ]; then
     #echo $hora_actual
     pkill -f $grabacion;
          #ffmpeg -rtsp_transport tcp -i rtsp://10.7.206.15/media/video3 -acodec copy -vcodec copy /home/breton/Documentos/prueba2.jpg
-    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -vframes 1 /home/ubuntu/bretcams/public/$cam_name/video_history/$fecha/$file_name.jpg &
+    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -vframes 1 /home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/$file_name.jpg &
     
-    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -acodec copy -vcodec copy /home/ubuntu/bretcams/public/$cam_name/video_history/$fecha/$file_name.avi
+    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -acodec copy -vcodec copy /home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/$file_name.avi
     
     #NODE_ENV=production CAM_NUMBER=$cam node /home/ubuntu/apistreamcams/jobs/new_record_day.js > record_day_cam$cam.log
     
 else
-    mkdir -p "/home/ubuntu/bretcams/public/$cam_name/video_history/$fecha";
+    mkdir -p "/home/ubuntu/recvideo/public/$cam_name/video_history/$fecha";
     pkill -f $grabacion;
 
-    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -vframes 1 /home/ubuntu/bretcams/public/$cam_name/video_history/$fecha/$file_name.jpg &
+    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -vframes 1 /home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/$file_name.jpg &
     
-    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -acodec copy -vcodec copy /home/ubuntu/bretcams/public/$cam_name/video_history/$fecha/$file_name.avi
+    nohup ffmpeg -rtsp_transport tcp -i rtsp://$ip/media/video2 -ss 00:00:00 -t 00:30:00 -acodec copy -vcodec copy /home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/$file_name.avi
     
     #NODE_ENV=production CAM_NUMBER=$cam node /home/ubuntu/apistreamcams/jobs/new_record_day.js > record_day_cam$cam.log
 fi
