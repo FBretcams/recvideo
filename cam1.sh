@@ -11,7 +11,7 @@ hora_actual=$(TZ=":America/Mexico_City" date +%R);
 #echo $hora_actual;
 cam="1"
 #echo $cam
-cam_name="cam000"$cam
+cam_name="cam000_"$cam
 file_name=$cam_name""$hora
 ip="10.7.206.15"
 #echo $ip
