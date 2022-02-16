@@ -9,7 +9,7 @@ hora=$(TZ=":America/Mexico_City" date +%H_%M)"_0";
 #echo $hora;
 hora_actual=$(TZ=":America/Mexico_City" date +%R);
 #echo $hora_actual;
-cam="1_"
+cam="1"
 #echo $cam
 cam_name="cam000"$cam
 file_name=$cam_name""$hora
