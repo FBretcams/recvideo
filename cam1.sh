@@ -15,7 +15,7 @@ cam_name="cam000"$cam
 file_name=$cam_name""$hora
 ip="10.7.206.15"
 #echo $ip
-grabacion=$cam_name"_"$hora_anterior;
+grabacion="_"$cam_name"_"$hora_anterior;
 #echo $grabacion
 
 if [ -d "/home/ubuntu/recvideo/public/$cam_name/video_history/$fecha/" ]; then
