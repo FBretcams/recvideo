@@ -9,9 +9,9 @@ hora=$(TZ=":America/Mexico_City" date +%H_%M)"_0";
 #echo $hora;
 hora_actual=$(TZ=":America/Mexico_City" date +%R);
 #echo $hora_actual;
-cam="1"
+cam="1_"
 #echo $cam
-cam_name="cam000_"$cam
+cam_name="cam000"$cam
 file_name=$cam_name""$hora
 ip="10.7.206.15"
 #echo $ip
